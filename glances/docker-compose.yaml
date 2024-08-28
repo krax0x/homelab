@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  monitoring:
+    image: docker.io/nicolargo/glances
+    container_name: glances
+    pid: host
+    environment:
+      - "GLANCES_OPT=-w"
+      - TZ=Europe/Sofia
+    volumes:
+      - /data/config/glances:/config
+      - /etc/os-release:/etc/os-release:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 61208-61209:61208-61209
+    restart: unless-stopped
