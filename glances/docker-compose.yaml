@@ -8,7 +8,7 @@ services:
       - "GLANCES_OPT=-w"
       - TZ=Europe/Sofia
     volumes:
-      - /data/config/glances:/config
+      - /data/config/glances:/etc/glances/glances.conf
       - /etc/os-release:/etc/os-release:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
