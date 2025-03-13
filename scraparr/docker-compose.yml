@@ -1,0 +1,8 @@
+services:
+  scraparr:
+    image: ghcr.io/thecfu/scraparr
+    container_name: scraparr
+    ports:
+      - "7100:7100"
+    volumes:
+      - /data/config/scraparr/config.yaml:/scraparr/config/config.yaml
