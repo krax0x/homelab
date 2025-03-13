@@ -5,11 +5,12 @@ services:
     container_name: syncthing
     hostname: popos-syncthing #optional
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=0
+      - PGID=0
       - TZ=Etc/UTC
     volumes:
       - /data/config/syncthing:/config
+      - /data/config:/homelab
     ports:
       - 8384:8384
       - 22000:22000/tcp
